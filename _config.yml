@@ -7,10 +7,10 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: Centrarium
-subtitle: "A simple yet classy theme for your Jekyll website or blog"
-email: blcentra@gmail.com
-name: Ben Centra
+title: KR Blogger
+subtitle: ""
+email: xyz@gmail.com
+name: Kiran Rao
 description: > 
   A simple yet classy theme for your Jekyll website or blog.
 baseurl: "/Blogged/" # the subpath of your site, e.g. /blog/
