@@ -5,13 +5,4 @@ permalink: /about/
 ---
 
 <img src="{{ site.baseurl }}assets/profile-placeholder.gif" title="Profile Picture" class="profile">
-
-Centrarium is a custom theme for Jekyll, made by [Ben Centra][bencentra] for his own blog. He'd be humbled if you liked it enough to use it as well! Installation and configuration instructions can be found in the [GitHub repository](https://github.com/bencentra/centrarium).
-
-This page is a good place to write about yourself, your project, your product, or whatever it is your site is for. You can replace the image above, or you can get rid of it entirely. 
-
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/). And you can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
-
-[centrarium]: https://github.com/bencentra/centrarium
-[bencentra]: http://bencentra.com
-[jekyll]: https://github.com/jekyll/jekyll
+About Me? The most hard thing on earth to write about. Well I feel "I can" but "I won't". I had slept off for an hour thinking about what to write. :-) As I am now awake hopefully you too are, I am continuing on this, I am a software engineer, trying to be a blogger and technology  enthusiast. This is my blog where I would like to post stuff related to mainly web developement, technology and at times my life experiences as it evolves!! 
