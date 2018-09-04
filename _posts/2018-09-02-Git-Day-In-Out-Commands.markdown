@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Day in Day out Git Commands for Developers"
+title:  "Day in Day out Git Command for Developers"
 date:   2018-09-02 21:21:00
 author: Kiran Rao
 categories: Git
@@ -28,8 +28,67 @@ Let us classify the commands under following categories and list them out in the
 <pre><code class="hljs bash">$ git clone http://github.com/MyProject/ProjectA </code></pre>
 Clones new project from the URL to the local directory and sets up a local repository
 
-
 <pre><code class="hljs bash">$ git init </code></pre>
 Initializes an empty git repository. This comes handy while stating fresh on a project or existing code and bring it under the purview of version control locally which later can be pushed to remote server. Often followed by <code>$ git add .</code>   To add all available files to the local repo.
+
+### BROWSE
+
+<pre><code class="hljs bash">$ git status </code></pre>
+Show the working tree status
+<pre><code class="hljs bash">$ git log</code></pre>
+ Show commit logs 
+<pre><code class="hljs bash">$ git blame </code></pre>
+Show what revision and author last modified each line of a file
+<pre><code class="hljs bash">$ git diff </code></pre>
+Show changes between commits, commit and working tree 
+
+
+### UPDATE
+
+<pre><code class="hljs bash">$ git pull</code></pre>
+Fetch from and integrate with another repository or a local branch. More precisely, git pull runs git fetch with the given parameters and calls git merge to merge the retrieved branch heads into the current branch. With --rebase, it runs git rebase instead of git merge which is the preferred approach to avoid unwanted merge commits in the repository. So the common update that works out for me is 
+<pre><code class="hljs bash">$ git pull --rebase origin develop   </code></pre>
+
+<pre><code class="hljs bash">$ git fetch</code></pre>
+Download objects and refs from another repository. This really only downloads new data from a remote repository - but it doesn't integrate any of this new data into your working files. In contrast pull not only downloads new data; it also directly integrates it into your current working copy files	
+<pre><code class="hljs bash">$ git merge</code></pre>
+Join two or more development histories together
+
+### REVERT
+
+<pre><code class="hljs bash">$ git reset</code></pre>
+Reset current HEAD to the specified state. Commonly used modes for reset 
+--soft
+Does not touch the staging area (index file) or the working tree at all (but resets the head to <commit>, just like all modes do). This leaves all your changed files "Changes to be committed", as git status would put it.
+--mixed
+Resets the staging area (index file) but not the working tree (i.e., the changed files are preserved but not marked for commit) and reports what has not been updated. This is the default action.
+--hard
+Resets the staging area (index file) and working tree. Any changes to tracked files in the working tree since <commit> are discarded.
+<pre><code class="hljs bash">$ git reset --hard HEAD</code></pre>  
+Local to remote reset
+<pre><code class="hljs bash">$ git reset HEAD^  </code></pre>
+Revert last commit and get files in working directory
+<pre><code class="hljs bash">$ git reset HEAD~5  </code></pre>
+Reverts last 5 commits and get files in working directory
+<pre><code class="hljs bash">$ git checkout</code></pre>
+Switch branches or restore working tree files
+<pre><code class="hljs bash">$ git checkout Branch_Name</code></pre>
+Checkout the branch
+<pre><code class="hljs bash">$ git checkout -b New_Branch_Name</code></pre>
+Creates a new branch and checkout the same
+<pre><code class="hljs bash">$ git revert Commit_id</code></pre>
+The git revert command is used for undoing changes to a repository's commit history. Other 'undo' commands like, git checkout and git reset, move the HEAD and branch ref pointers to a specified commit. Git revert also takes a specified commit, however, git revert does not move ref pointers to this commit. A revert operation will take the specified commit
+inverse the changes from that commit, and create a new "revert commit". The ref pointers are then updated to point at the new revert commit making it the tip of the branch.
+
+### COMMIT 
+<pre><code class="hljs bash">$ git commit –m “Commit message”</code></pre>
+ Record changes to the repository
+<pre><code class="hljs bash">$ git commit --amend --no-edit</code></pre>
+Amends the commit with no change in the initial commit message.
+<pre><code class="hljs bash">$ git show commit_id</code></pre>
+Shows what a commit did
+
+
+
 
 [Git Workflows]:      https://www.atlassian.com/git/tutorials/comparing-workflows
