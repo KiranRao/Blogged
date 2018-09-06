@@ -20,8 +20,8 @@ Let us classify the commands under following categories and list them out in the
 - BROWSE
 - REVERT
 - UPDATE
-- BRANCH
 - COMMIT 
+- BRANCH
 - PUSH
 
 ### CREATE
@@ -88,6 +88,56 @@ Amends the commit with no change in the initial commit message.
 <pre><code class="hljs bash">$ git show commit_id</code></pre>
 Shows what a commit did
 
+### BRANCH
+<pre><code class="hljs bash">$ git checkout </code></pre>
+Switch working directory to branch
+<pre><code class="hljs bash">$ git merge branch</code></pre>
+Merge into the current branch
+<pre><code class="hljs bash">$ git checkout –b new other</code></pre>
+Branch new from other and switch to it
+
+### PUSH
+<pre><code class="hljs bash">$ git push  remote branch_name</code></pre>
+Update remote refs along with associated objects
+ 
+-------------------------------------------------------------------------------------------------------------------------
+Let us now list out some of the commonly needed commands for a given scenario. 
+
+#### How to delete a Git branch both locally and remotely?
+<pre><code class="hljs bash">$ git branch -d branch_name  </code></pre>
+Deletes branch in local repository 
+<pre><code class="hljs bash">$ git push origin --delete branch_name</code></pre>
+Deletes branch in remote repository 
+
+-------------------------------------------------------------------------------------------------------------------------
+
+#### How to pull co-worker’s remote forked branch into local and work with it?
+<pre><code class="hljs bash">$ git remote add REMOTE_NAME http://github.com/co-worker/Repository_name</code></pre>
+<pre><code class="hljs bash">$ git fetch REMOTE_NAME</code></pre>
+<pre><code class="hljs bash">$ git checkout -b NEW BRANCH_NAME --track REMOTE_NAME/BRANCH_NAME</code></pre>
+OR 
+<pre><code class="hljs bash">$ git checkout --track REMOTE_NAME/BRANCH_NAME</code></pre>
+ 
+-------------------------------------------------------------------------------------------------------------------------
+
+#### Cherry-Picking
+ 
+<pre><code class="hljs bash">$ git cherry-pick SHA_ID</code></pre>
+ 
+<pre><code class="hljs bash">$ git cherry-pick --edit SHA_ID</code></pre>
+Editor will open to edit message
+ 
+<pre><code class="hljs bash">$ git cherry-pick --no-commit SHA1 SHA2</code></pre>
+Pick from multiple commits, changes will not be committed	
+ 
+<pre><code class="hljs bash">$ git cherry-pick -x </code></pre>
+-x allows to Tracks where the commit came from if you need that 
+ 
+ 
+<pre><code class="hljs bash">$ git cherry-pick SHA_of_the_beginning_commit^..SHA_of_the_end_commit</code></pre>
+Cherry pick range of commits with ^.. 
+
+ 
 
 
 
